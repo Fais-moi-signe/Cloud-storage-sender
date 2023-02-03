@@ -1,3 +1,2 @@
-tkinter
 google-auth
 google-cloud-storage

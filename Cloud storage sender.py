@@ -34,8 +34,8 @@ def send_file():
             raise Exception("Please select a file first")
         if os.path.getsize(file_path) > 2 * 1024 * 1024:  # 2 Mo en octets
             raise Exception("Maximum  file size is 2 Mo")
-        if not file_path.endswith(".glb"):
-            raise Exception("Not a .glb file")
+        # if not file_path.endswith(".glb"):
+        #     raise Exception("Not a .glb file")
         bucket = cloud_client.get_bucket('fms_animations_bucket')
         blob = bucket.blob(ntpath.basename(file_path))
         blob.upload_from_filename(file_path)
